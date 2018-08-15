@@ -38,7 +38,7 @@ let person = {
   */
 
 // Getters and setters
-
+/*
   let restaurant = {
   _name: 'Italian Bistro',
   _seatingCapacity: 120,
@@ -54,7 +54,7 @@ let person = {
     }
   }
 }
-
+*/
 // Getter and Setter 2
 let person = {
     _name: 'Lu Xun',
@@ -68,11 +68,15 @@ let person = {
         console.log('Invalid input');
         return 'Invalid input';
       }
+    },
+    get age() {
+      console.log(`${this._name} is ${this._age} years old`)
+      return this._age;
     }
-  
   };
-  
-  person.age = 39;
 
-  // can not print
-  console.log(person.age)
+person.age = 'one';
+person.age = 39;
+console.log(person.age);
+
+//test git
