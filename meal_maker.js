@@ -6,48 +6,44 @@ In this project, you'll use JavaScript to randomly create a three-course meal ba
 */
 
 const menu = {
-    _courses: {
-        appetizers: [],
+    //This property will ultimately contain a mapping between each course and the dishes available to order in that course.
+    _courses = {
+        appetizer: [],
         mains: [],
         desserts: [],
 
-        get appetizers() {
+        set appetizer(appetizerIn) {},
 
-        },
-        set appetizers(appetizersIn) {
+        get appetizer() {},
 
-        },
+        set mains(mainsIn) {},
 
-        get mains() {
+        get mains() {},
 
-        },
-        set mains(mainsIn) {
+        set desserts(dessertsIn) {},
 
-        },
-
-        get desserts() {
-
-        },
-        set desserts(dessertsIn) {
-
-        }
+        get desserts() {}
     },
 
-    get course() {
+    get courses() {
+        // return an object that contains key/value pairs for appetizers, mains, and desserts.
         return {
-        appetizers: this._courses.appetizers,
-        mains: this._courses.mains,
-        desserts: this._courses.desserts
-    },
-
-    addDishToCourse (courseName, dishName, dishPrice) {
-        let dish = {
-            name: 
+            appetizer: this._courses.appetizer,
+            mains: this._courses.mains,
+            desserts: this._courses.desserts
         }
-        this.courses[courseName].push(dish);
+    },
+    // Inside the menu create a method called .addDishToCourse(), used to add a new dish to the specified course on the menu.
+    // method three parameters: the courseName, the dishName , and the dishPrice.
+    addDishToCourse (courseName, dishName, dishPrice) {
+        // The .addDishToCourse() method should create an object called dish which has a name and price which it gets from the parameters.
+        // The method should then push this dish object into the appropriate array in your menu's _courses object based on what courseName was passed in.
+        const dish = {
+            courseName:,
+            dishName:,
+            dishPrice
+        }
+        this._courses[courseName].push(dish);
     }
 
-    getRandomDishFromCourse (courseName) {
-        
-    }
-}
+};
