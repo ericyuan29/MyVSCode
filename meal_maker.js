@@ -7,31 +7,38 @@ In this project, you'll use JavaScript to randomly create a three-course meal ba
 
 const menu = {
     //This property will ultimately contain a mapping between each course and the dishes available to order in that course.
-    _courses = {
-        appetizer: [],
-        mains: [],
-        desserts: [],
+    _courses: {
+        _appetizers: [],
+        _mains: [],
+        _desserts: [],
 
-        set appetizer(appetizerIn) {},
-
-        get appetizer() {},
-
-        set mains(mainsIn) {},
-
-        get mains() {},
-
-        set desserts(dessertsIn) {},
-
-        get desserts() {}
+        get appetizers() {
+            return this._appetizer;
+        },
+        set appetizers(appetizerIn) {
+            this._appetizers = appetizerIn;
+        },
+        get mains() {
+            return this._mains;
+        },
+        set mains(mainsIn) {
+            this._mains = mainsIn;
+        },
+        get desserts() {
+            return this._dessertsIn;
+        },
+        set desserts(dessertsIn) {
+            this._desserts = dessertsIn;
+        },
     },
 
     get courses() {
         // return an object that contains key/value pairs for appetizers, mains, and desserts.
         return {
-            appetizer: this._courses.appetizer,
+            appetizers: this._courses.appetizers,
             mains: this._courses.mains,
             desserts: this._courses.desserts
-        }
+        };
     },
     // Inside the menu create a method called .addDishToCourse(), used to add a new dish to the specified course on the menu.
     // method three parameters: the courseName, the dishName , and the dishPrice.
@@ -39,11 +46,36 @@ const menu = {
         // The .addDishToCourse() method should create an object called dish which has a name and price which it gets from the parameters.
         // The method should then push this dish object into the appropriate array in your menu's _courses object based on what courseName was passed in.
         const dish = {
-            courseName:,
-            dishName:,
-            dishPrice
-        }
+            name: dishName,
+            price: dishPrice,
+        };
         this._courses[courseName].push(dish);
-    }
+    },
+
+    getRandomDishFromCourse (courseName) {
+        const dishes = this._courses[courseName];
+        const randomIndex = Math.floor(Math.random() * dishes.length);
+        return dishes[randomIndex];
+    },
+
+    generateRandomMeal() {
+        const appetizer = this.getRandomDishFromCourse('appetizers');
+        const main = this.getRandomDishFromCourse('mains');
+        const dessert = this.getRandomDishFromCourse('desserts');
+        const totalPrice = appetizer.price + main.price + dessert.price;
+
+        return `Your meal is ${appetizer.name}, ${main.name}, ${desserts.name}, total price is $${totalPrice.toFixed(2)}`;
+    },
 
 };
+
+menu.addDishToCourse('apperizers', 'salad', 6.25);
+menu.addDishToCourse('apperizers', 'salad two', 7.25);
+menu.addDishToCourse('mains', 'shrimp', 12.00);
+menu.addDishToCourse('mains', 'lobster', 15.00);
+menu.addDishToCourse('desserts', 'cake', 2.25);
+menu.addDishToCourse('desserts', 'tea', 3.25);
+
+let meal = menu.generateRandomMeal();
+console.log(meal);
+

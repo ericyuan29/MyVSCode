@@ -55,6 +55,7 @@ let person = {
   }
 }
 */
+/*
 // Getter and Setter 2
 let person = {
     _name: 'Lu Xun',
@@ -80,4 +81,27 @@ person.age = 39;
 console.log(person.age);
 
 //test git
+/*
+// ??----------------------------------why alarm = not === if it is a string---------------------------------------------
+let day = 'Monday';
+let alarm;
+let person = {
+  name: 'Tyron',
+  age: 40,
+  weekendAlarm: 'No alarms needed',
+  weekAlarm: 'Alarm set to 7AM'
+};
 
+if (day === 'Monday' || day === 'Tuesday' || day === 'Wednesday' || day === 'Thursday' || day === 'Friday') {
+  alarm = 'weekendAlarm';
+} else if (day === 'Sunday') {
+  alarm = 'weekAlarm';
+}
+
+console.log(person[alarm])
+
+
+console.log(person['name']);
+console.log(person['age']);
+
+*/
