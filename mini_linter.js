@@ -37,6 +37,7 @@ for (var i = 0; i < storyWords.length; i++) {
     }
 }
 console.log(storyWordsNew);
+console.log(storyWords);
 
 // -- delete unnecessartWords - using .filter
 /*

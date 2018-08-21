@@ -1,80 +1,66 @@
 const menu = {
-    _courses: {
-      _appetizers: [],
-      _mains: [],
-      _desserts: [],
-      
-      set appetizers(appetizersIn) {
-        this._appetizers = appetizersIn;
-      },
-      get appetizers() {
-        return this._appetizers;
-      },
-      set mains(mainsIn) {
-        this._mains = mainsIn;
-      },
-      get mains() {
-        return this._mains;
-      },
-      set desserts(dessertsIn) {
-        this._desserts = dessertsIn;
-      },
-      get desserts() {
-        return this._desserts;
-      },
+  _courses: {
+    _appetizers: [],
+    _mains: [],
+    _desserts: [],
 
+    set appetizers(appetizersIn) {
+      this._appetizers = appetizersIn;
     },
-    
-    get courses() {
-      return {
-        appetizers: this._courses.appetizers,
-        mains: this._courses.mains,
-        desserts: this._courses.desserts,
-      };
+    get appetizers() {
+      return this._appetizers;
+    },
+    set mains(mainsIn) {
+      this._mains = mainsIn;
+    },
+    get mains() {
+      return this._mains;
+    },
+    set desserts(dessertsIn) {
+      this._desserts = dessertsIn;
+    },
+    get desserts() {
+      return this._desserts;
+    },
+  },
+  get courses() {
+    return {
+      appetizers: this._courses.appetizers,
+      mains: this._courses.mains,
+      desserts: this._courses.desserts,
+    };
+  },
+
+  addDishToCourse (courseName, dishName, dishPrice) {
+    let dish = {
+      name: dishName,
+      price: dishPrice,
+    };
+    // [courseName] call app/mains.. is a parameter
+    this._courses[courseName].push(dish);
+
+  },
+
+  getRandomDishFromCourse (courseName) {
+    let dishes = this._courses[courseName];
+    let index = Math.floor(Math.random() * dishes.length);
+    return dishes[index];
+  },
+  generateRandomMeal () {
+    let appetizer = this.getRandomDishFromCourse('appetizers');
+    let main = this.getRandomDishFromCourse('mains');
+    let dessert = this.getRandomDishFromCourse('desserts');
+    let totalPrice = appetizer.price + main.price + dessert.price;
+    return `appetizer is ${appetizer.name}, main is ${main.name}, dessert is ${dessert.name}, total ${totalPrice}`;
   },
 }
-    console.log(courses());
-    
-    ///===============================================================
-    /*
-    addDishToCourse (courseName, dishName, dishPrice) {
-      const dish = {
-        name: dishName,
-        price: dishPrice,
-      };
-      
-      this._courses[courseName].push(dish);
-    },
-    
-    getRandomDishFromCourse (courseName) {
-      const dishes = this._courses[courseName];
-      const randomIndex = Math.floor(Math.random() * dishes.length);
-      return dishes[randomIndex];
-    },
-    
-    generateRandomMeal() {
-      const appetizer = this.getRandomDishFromCourse('appetizers');
-      const main = this.getRandomDishFromCourse('mains');
-      const dessert = this.getRandomDishFromCourse('desserts');
-      const totalPrice = appetizer.price + main.price + dessert.price;
-      
-      return `Your meal is ${appetizer.name}, ${main.name} and ${dessert.name}. The price is $${totalPrice.toFixed(2)}.`;
-    },
-  };
-  
-  menu.addDishToCourse('appetizers', 'Ceasar Salad', 4.25);
-  menu.addDishToCourse('appetizers', 'Prawn Coctail', 4.25);
-  menu.addDishToCourse('appetizers', 'Garlic Bread', 3.50);
-  
-  menu.addDishToCourse('mains', 'Lasagna', 9.75);
-  menu.addDishToCourse('mains', 'Ribeye Steak', 14.95);
-  menu.addDishToCourse('mains', 'Fish & Chips', 12.95);
-  
-  menu.addDishToCourse('desserts', 'Cheese Cake', 4.50);
-  menu.addDishToCourse('desserts', 'Creme Brule', 4.25);
-  menu.addDishToCourse('desserts', 'Cheese Board', 3.25);
-  
-  let meal = menu.generateRandomMeal();
-  
-  console.log(meal);
-  */
+
+menu.addDishToCourse('appetizers', 'salad', 5);
+menu.addDishToCourse('appetizers', 'salad 2',6);
+menu.addDishToCourse('mains', 'rice', 10);
+menu.addDishToCourse('mains', 'noodle', 12);
+menu.addDishToCourse('desserts', 'cake', 2);
+menu.addDishToCourse('desserts', 'tea', 3);
+
+let meal = menu.generateRandomMeal();
+console.log(meal)
