@@ -14,3 +14,20 @@ whether this employee is entry level, mid level, or senior level.
 WorkAround currently contains the data and functions in a single file, 
 though they would like to modify the program so it makes use of JavaScript modules.
 */
+
+let Employee = {
+  salary: 100000,
+};
+
+function getEmployeeInformation(inputSalary) {
+  salary = inputSalary;
+  console.log('Cadre: ' + getCadre());
+  console.log('Tax: ' + calculateTax());
+  console.log('Benefits: ' + getBenefits());
+  console.log('Bonus: ' + calculateBonus());
+  console.log('Reimbursement Eligibility: ' + reimbursementEligibility() + '\n');
+}
+
+getEmployeeInformation(10000);
+getEmployeeInformation(50000);
+getEmployeeInformation(100000);
