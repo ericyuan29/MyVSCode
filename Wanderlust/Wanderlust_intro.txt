@@ -1,5 +1,15 @@
 // Wanderlust Project
 
+Request Map:
+-https://s3.amazonaws.com/codecademy-content/courses/intermediate-javascript-requests/diagrams/XHR+POST+diagram.svg
+-https://s3.amazonaws.com/codecademy-content/courses/intermediate-javascript-requests/diagrams/XHR+GET+diagram.svg
+-https://s3.amazonaws.com/codecademy-content/courses/intermediate-javascript-requests/diagrams/fetch+GET+diagram.svg
+-https://s3.amazonaws.com/codecademy-content/courses/intermediate-javascript-requests/diagrams/fetch+POST+diagram.svg
+-https://s3.amazonaws.com/codecademy-content/courses/intermediate-javascript-requests/diagrams/async+await+GET+diagram.svg
+-ttps://s3.amazonaws.com/codecademy-content/courses/intermediate-javascript-requests/diagrams/async+await+POST+diagram.svg
+
+
+
 APIXU API: 
 - Apixu provides access to weather and geo data via a JSON/XML restful API. 
   It allows developers to create desktop, web and mobile applications using this data very easy.
@@ -13,8 +23,10 @@ APIXU API:
     Search or Autocomplete API
     NEW: Historical weather
     https://www.apixu.com/doc/
+    P/C: o/66Yy
 
 Foursquare API:
 - Map/location API; Create Magical Real-World Moments for Your Users
     https://developer.foursquare.com/
+    P/C: o/66Yy
 
