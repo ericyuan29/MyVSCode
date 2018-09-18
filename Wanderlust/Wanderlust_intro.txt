@@ -1,4 +1,5 @@
 // Wanderlust Project
+//solutions: https://www.youtube.com/watch?v=L2mCpLOUzeQ
 
 Request Map:
 -https://s3.amazonaws.com/codecademy-content/courses/intermediate-javascript-requests/diagrams/XHR+POST+diagram.svg
@@ -28,5 +29,5 @@ APIXU API:
 Foursquare API:
 - Map/location API; Create Magical Real-World Moments for Your Users
     https://developer.foursquare.com/
-    P/C: o/66Yy
+    P/C: o/4square
 
